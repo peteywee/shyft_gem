@@ -5,33 +5,41 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p 8080",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:ui": "playwright test",
+    "seed:dev": "NODE_OPTIONS='--experimental-json-modules' NEXT_PUBLIC_ENV=dev node scripts/seed-dev.js",
+    "deploy:run": "gcloud run deploy staff-org --source . --region us-central1 --allow-unauthenticated"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.2.3",
-    "@tanstack/react-query": "^5.84.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tanstack/react-query": "^5.51.1",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
-    "firebase": "^12.1.0",
-    "firebase-admin": "^13.4.0",
+    "date-fns": "^3.6.0",
+    "firebase": "^10.12.3",
+    "firebase-admin": "^12.2.0",
     "next": "15.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-hook-form": "^7.62.0",
-    "tailwind-merge": "^3.3.1",
-    "zod": "^4.0.17"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
+    "tailwind-merge": "^2.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ducanh2912/next-pwa": "^10.2.9",
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@ducanh2912/next-pwa": "^10.2.7",
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "tailwindcss": "^4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
